@@ -37,7 +37,6 @@ func isLoopbackIP(ip string) bool {
 // IsValidURL checks if URL is valid
 func IsValidURL(uri string) bool {
 	if u, err := url.ParseRequestURI(uri); err != nil ||
-		(u.Scheme != "http" && u.Scheme != "https") ||
 		!validPort(portOnly(u.Host)) {
 		return false
 	}
